@@ -33,8 +33,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.daily_cost_accounting.data.Category
-import com.example.daily_cost_accounting.data.Expenses
 import com.example.daily_cost_accounting.viewModel.ExpensesViewModel
 
 
@@ -90,8 +88,7 @@ fun ExpensesListScreen(expensesViewModel: ExpensesViewModel, navController: NavC
                             Spacer(modifier = Modifier.weight(1f))
                             Text(text = "Категория: " + expense.category,
                                 modifier = Modifier.padding(end = 10.dp))
-                            IconButton(onClick = { expensesViewModel.removeExpenses(expense)
-                                navController.navigate("/expenses")}) {
+                            IconButton(onClick = { expensesViewModel.removeExpenses(expense)}) {
                                 Icon(Icons.Default.Delete, contentDescription = null)
                             }
                         }

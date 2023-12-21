@@ -53,7 +53,7 @@ fun AddExpensesScreen(expensesViewModel: ExpensesViewModel, categoryViewModel: C
         mutableStateOf("")
     }
 
-    var categories = categoryViewModel.categories
+    val categories = categoryViewModel.categories
 
     Box(
         modifier = Modifier
@@ -102,7 +102,8 @@ fun AddExpensesScreen(expensesViewModel: ExpensesViewModel, categoryViewModel: C
                                 Text(text = category.name )
                                 Spacer(modifier = Modifier.weight(1f))
                                 IconButton(onClick = { categoryViewModel.removeCategory(category)
-                                navController.navigate("/add-expenses")}) {
+                                 navController.navigate("/expenses")
+                                }) {
                                     Icon(Icons.Rounded.Delete, contentDescription = null)
                                 }
                             }
