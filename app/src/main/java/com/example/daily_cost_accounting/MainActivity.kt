@@ -21,13 +21,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val expensesViewModel = viewModel<ExpensesViewModel>()
-            val jokeViewModel = viewModel<JokeViewModel>()
             val categoryViewModel = viewModel<CategoryViewModel>()
             val navController = rememberNavController()
             
             NavHost(navController = navController, startDestination = "/joke"){
                 composable("/joke"){
-                    JokeScreen(jokeViewModel, navController)
+                    JokeScreen(navController)
                 }
                 composable("/expenses"){
                     ExpensesListScreen(expensesViewModel, navController)
